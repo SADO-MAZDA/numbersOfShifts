@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Сдвиг_массива_на_1_вправо
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, };
+            int temp;
+            int numbersOfShifts;
+            
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.Write(numbers[i] + " ");
+            }
+
+            Console.WriteLine();
+            Console.Write("Введите количество сдвигов влево - ");
+            numbersOfShifts = Convert.ToInt32(Console.ReadLine());
+
+            for (int j = 0; j < numbersOfShifts; j++)
+            {
+                temp = numbers[0];
+
+                for (int i = 0; i < numbers.Length-1; i++)
+                {
+                    numbers[i] = numbers[i+1];
+                }
+                numbers[numbers.Length - 1] = temp;
+            }
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.Write(numbers[i] + " ");
+            }
+        }
+    }
+}
